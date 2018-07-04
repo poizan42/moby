@@ -50,8 +50,8 @@ if [ "$(go env GOOS)/$(go env GOARCH)" != "$(go env GOHOSTOS)/$(go env GOHOSTARC
 	esac
 fi
 
-# -buildmode=pie is not supported on Windows.
-if [ "$(go env GOOS)" != "windows" ]; then
+# -buildmode=pie is not supported on Windows and mips.
+if [ "$(go env GOOS)" != "windows" ] && [ "$(go env GOARCH)" != "mips" ]; then
 	BUILDFLAGS+=( "-buildmode=pie" )
 fi
 
