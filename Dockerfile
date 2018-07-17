@@ -233,7 +233,7 @@ RUN cd /docker-py \
 ENV PATH=/usr/local/cli:$PATH
 ENV DOCKER_BUILDTAGS apparmor seccomp selinux
 # Options for hack/validate/gometalinter
-ENV GOMETALINTER_OPTS="--deadline=2m"
+ENV GOMETALINTER_OPTS="--deadline=60m"
 WORKDIR /go/src/github.com/docker/docker
 VOLUME /var/lib/docker
 # Wrap all commands in the "docker-in-docker" script to allow nested containers
